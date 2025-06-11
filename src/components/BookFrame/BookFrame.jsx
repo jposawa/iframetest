@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import React from "react";
 import styles from "./BookFrame.module.css";
 
@@ -27,7 +28,7 @@ export const DataSource = {
  */
 export const BookFrame = (props) => {
   const {
-    iframeUrl = "http://localhost:5173",
+    iframeUrl = "https://test--investest.netlify.app/",
     iframeId = "frame-1",
     typeColumnShow = "both",
     showHeader = true,
