@@ -44,6 +44,10 @@ export const BookFrame = (props) => {
     // });
 
     if (operationDataSource === DataSource.Frame && event?.data?.type === "opData") {
+      console.table({
+        _frameEvent: "Recebendo do iframe",
+        event,
+      })
       iframeElement?.contentWindow.postMessage(event.data, "*")
     }
   }, [iframeElement, operationDataSource]);
@@ -67,7 +71,7 @@ export const BookFrame = (props) => {
           operationDataSource,
         }, "*")
       }
-    }, 500);
+    }, 1000);
 
     return () => {
       window.removeEventListener("message", handleMessage);
@@ -81,6 +85,8 @@ export const BookFrame = (props) => {
       setIframeElement(element);
     }
   }, [iframeElement, iframeId]);
+
+
 
   return (
     <iframe
